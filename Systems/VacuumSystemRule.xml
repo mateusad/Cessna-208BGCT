@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--  ##################################################################
+      ####      VacuumSystemRule.xml - ePilot                       ####
+      ####                                                          ####
+      ####    Property Rule for Vacuum System                       ####
+      ################################################################## -->
+
+<PropertyList>
+
+  <filter>
+    <name>VacuumSystem</name>
+    <debug>false</debug>
+    <feedback-if-disabled>true</feedback-if-disabled>
+    <type>gain</type>
+    <gain>1</gain>
+
+    <input>
+      <property>/systems/vacuum/suction-inhg</property>
+      <min>0</min>
+      <max>9</max>
+    </input>
+    <output>/systems/vacuum/suction</output>
+
+  </filter>
+
+</PropertyList>

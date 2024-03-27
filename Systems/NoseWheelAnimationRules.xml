@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--  ##################################################################
+      ####      NoseWheelAnimationRuiles.xml - ePilot               ####
+      ####                                                          ####
+      ####    Property Rule for NoseWheel Animations                ####
+      ################################################################## -->
+
+<PropertyList>
+
+  <filter>
+    <name>NoseWheelCastorLeft</name>
+    <debug>false</debug>
+    <feedback-if-disabled>true</feedback-if-disabled>
+
+    <enable>
+      <condition>
+        <greater-than>
+          <property>fdm/jsbsim/gear/unit[3]gear/wheel-speed-fps</property>
+          <value>0.75</value>
+        </greater-than>
+      </condition>
+    </enable>
+
+    <input>/fdm/jsbsim/gear/unit[3]gear/steering-angle-deg</input>
+    <output>/gear/gear[3]/castor-angle</output>
+
+    <type>gain</type>
+    <gain>0.8</gain>
+    <!--    <max-rate-of-change>25</max-rate-of-change> -->
+  </filter>
+
+  <filter>
+    <name>NoseWheelCastorRight</name>
+    <debug>false</debug>
+    <feedback-if-disabled>true</feedback-if-disabled>
+
+    <enable>
+      <condition>
+        <greater-than>
+          <property>fdm/jsbsim/gear/unit[4]gear/wheel-speed-fps</property>
+          <value>0.75</value>
+        </greater-than>
+      </condition>
+    </enable>
+
+    <input>/fdm/jsbsim/gear/unit[4]gear/steering-angle-deg</input>
+    <output>/gear/gear[4]/castor-angle</output>
+
+    <type>gain</type>
+    <gain>0.8</gain>
+    <!--    <max-rate-of-change>25</max-rate-of-change> -->
+  </filter>
+
+</PropertyList>
